@@ -25,7 +25,7 @@
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:hint="Masukkan No Tujuan"
-        android:inputType="number" />
+        android:inputType="text" />
     <Button
         android:id="@+id/btnKirim"
         android:layout_width="wrap_content"
@@ -35,5 +35,6 @@
         android:id="@+id/btnToFourth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#CA0E00"
         android:text="Ke Fourth Activity" />
 </LinearLayout>

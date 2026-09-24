@@ -13,19 +13,21 @@ class ThirdActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tombol Kirim
+        // Tombol Kirim ke ThirdResultActivity
         binding.btnKirim.setOnClickListener {
             val intent = Intent(this, ThirdResultActivity::class.java)
             startActivity(intent)
         }
 
-        // Tombol menuju FourthActivity
+        // Tombol Pindah ke FourthActivity + Kirim Data
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
             startActivity(intent)
         }
     }
