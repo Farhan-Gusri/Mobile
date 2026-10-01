@@ -2,8 +2,8 @@ package com.example.mars_farhan3tie.Pertemuan4
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mars_farhan3tie.R
 import com.example.mars_farhan3tie.databinding.ActivityFourthBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -14,8 +14,17 @@ class FourthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+
+        supportActionBar?.apply {
+            title = "Activity Fourth"
+            subtitle = "Ini adalah subtitle"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
         Log.e("onCreate", "FourthActivity dibuat pertama kali")
 
@@ -28,7 +37,11 @@ class FourthActivity : AppCompatActivity() {
 
         // 1. Event Snackbar
         binding.btnShowSnackbar.setOnClickListener {
-            Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+            Snackbar.make(
+                binding.root,
+                "Ini adalah Snackbar",
+                Snackbar.LENGTH_SHORT
+            )
                 .setAction("Tutup") {
                     Log.e("Info Snackbar", "Snackbar ditutup")
                 }
@@ -50,10 +63,17 @@ class FourthActivity : AppCompatActivity() {
                 }
                 .show()
         }
+    }
 
-        // 3. Tombol Kembali
-        binding.btnKembali.setOnClickListener {
-            finish()
+    // Tombol Back pada Toolbar
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

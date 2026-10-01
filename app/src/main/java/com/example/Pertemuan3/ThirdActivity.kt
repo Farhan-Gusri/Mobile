@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.Pertemuan3.ThirdResultActivity
 import com.example.mars_farhan3tie.Pertemuan4.FourthActivity
 import com.example.mars_farhan3tie.databinding.ActivityThirdBinding
+import com.example.mars_farhan3tie.pertemuan_5.FifthActivity
 
 class ThirdActivity : AppCompatActivity() {
 
@@ -16,18 +17,20 @@ class ThirdActivity : AppCompatActivity() {
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tombol Kirim ke ThirdResultActivity
         binding.btnKirim.setOnClickListener {
             val intent = Intent(this, ThirdResultActivity::class.java)
             startActivity(intent)
         }
 
-        // Tombol Pindah ke FourthActivity + Kirim Data
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             intent.putExtra("name", "Politeknik Caltex Riau")
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
+            startActivity(intent)
+        }
+        binding.btnfi.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
         }
     }
