@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mars_farhan3TIE">
 
-        <!-- SplashActivity di folder Pertemuan6 sebagai LAUNCHER -->
+        <!-- 1. MainActivity JADI LAUNCHER (Halaman Utama Awal) -->
         <activity
-            android:name=".Pertemuan6.SplashActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,32 +23,44 @@
             </intent-filter>
         </activity>
 
-        <!-- MainActivity -->
+        <!-- 2. BaseActivity diubah jadi exported="false" -->
         <activity
-            android:name=".MainActivity"
+            android:name=".BaseActivity"
             android:exported="false" />
 
-        <!-- Activity Lainnya -->
+        <activity
+            android:name=".Pertemuan6.SplashActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Pertemuan3.ThirdActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name="com.example.Pertemuan3.ThirdResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".Pertemuan4.FourthActivity"
             android:exported="false" />
+
         <activity
             android:name=".pertemuan_5.FifthActivity"
             android:exported="false" />
+
         <activity
             android:name=".Pertemuan5.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".AuthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.Pertemuan6.SixthActivity"
             android:exported="false" />
 
     </application>

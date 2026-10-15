@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFEFEF"
-    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Pertemuan3.ThirdActivity">
+
     <TextView
         android:id="@+id/textVerif"
         android:layout_width="wrap_content"
@@ -15,32 +16,54 @@
         android:fontFamily="@font/archivoblack_regular"
         android:text="Selamat Datang"
         android:textSize="25sp" />
+
     <ImageView
         android:id="@+id/imgMobile"
         android:layout_width="130dp"
         android:layout_height="143dp"
         android:src="@drawable/mobile" />
+
     <EditText
         android:id="@+id/inputNoTujuan"
         android:layout_width="268dp"
         android:layout_height="wrap_content"
         android:hint="Masukkan No Tujuan"
         android:inputType="text" />
+
     <Button
         android:id="@+id/btnKirim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kirim" />
+
     <Button
         android:id="@+id/btnToFourth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#CA0E00"
         android:text="Pertemuan4" />
+
     <Button
         android:id="@+id/btnfi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#CA0E00"
         android:text="Pertemuan5" />
+
+    <!-- Tombol Ke Pertemuan 6 (BaseActivity / SixthActivity) -->
+    <Button
+        android:id="@+id/btnToSixth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#673AB7"
+        android:text="Pertemuan6" />
+
+    <!-- Tombol Ke Halaman Login (AuthActivity) -->
+    <Button
+        android:id="@+id/btnToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF9800"
+        android:text="Login" />
+
 </LinearLayout>

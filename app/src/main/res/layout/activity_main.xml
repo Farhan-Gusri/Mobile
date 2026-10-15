@@ -19,8 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <!-- TOMBOL BARU KE AUTH ACTIVITY -->
+    <!-- TOMBOL KE AUTH ACTIVITY -->
     <Button
         android:id="@+id/btnToAuth"
         android:layout_width="0dp"
@@ -33,5 +32,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+    <!-- TOMBOL PERTEMUAN 6 -->
+    <Button
+        android:id="@+id/btnPertemuan6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        android:text="Pertemuan 6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnToAuth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
