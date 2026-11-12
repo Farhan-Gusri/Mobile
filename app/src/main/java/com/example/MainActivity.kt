@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Pertemuan10.FragmentMore
+import com.example.Pertemuan11.TenthActivity
 import com.example.mars_farhan3tie.pertemuan_9.NinthActivity
 
 class MainActivity : AppCompatActivity() {
@@ -53,5 +54,11 @@ class MainActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+        val btnPertemuan11 = findViewById<Button>(R.id.btnPertemuan11)
+        btnPertemuan11.setOnClickListener {
+            val intent = Intent(this, TenthActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

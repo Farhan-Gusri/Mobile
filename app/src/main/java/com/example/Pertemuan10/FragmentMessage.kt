@@ -1,10 +1,17 @@
 package com.example.Pertemuan10
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.Pertemuan11.tutorial.TutorialMessageActivity
+import com.example.mars_farhan3tie.R
 import com.example.mars_farhan3tie.databinding.FragmentMessageBinding
 
 class FragmentMessage : Fragment() {
@@ -36,10 +43,32 @@ class FragmentMessage : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = MessageAdapter(requireContext(), messageList)
+        // Setup Toolbar dan aktifkan Option Menu
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "Message"
+        }
+        setHasOptionsMenu(true)
 
-        // Ganti binding.listViewMessage menjadi binding.listMessageItems
+        // Setup ListView MessageAdapter
+        val adapter = MessageAdapter(requireContext(), messageList)
         binding.listMessageItems.adapter = adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.message_toolbar_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_tutorial -> {
+                val intent = Intent(requireContext(), TutorialMessageActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onDestroyView() {

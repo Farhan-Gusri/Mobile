@@ -67,6 +67,15 @@
             android:name=".pertemuan_9.NinthActivity"
             android:exported="false" />
 
+        <activity
+            android:name="com.example.Pertemuan11.TenthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.Pertemuan11.tutorial.TutorialMessageActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>
