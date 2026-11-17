@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Judul Header -->
+    <TextView
+        android:id="@+id/tvTitleHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Selamat Datang"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Pemrograman Mobile"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- 1. Button Auth -->
+    <Button
+        android:id="@+id/btnToAuth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#FF9800"
+        android:padding="12dp"
+        android:text="Ke Halaman Auth / Login" />
+
+    <!-- 2. Button Pertemuan 6 -->
+    <Button
+        android:id="@+id/btnPertemuan6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#6750A4"
+        android:padding="12dp"
+        android:text="Pertemuan 6" />
+
+    <!-- 3. Button Pertemuan 9 -->
+    <Button
+        android:id="@+id/btnPertemuan9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#6750A4"
+        android:padding="12dp"
+        android:text="Pertemuan 9 (Widget &amp; Layout)" />
+
+    <!-- 4. Button Pertemuan 10 (YANG BARU DITAMBAHKAN) -->
+    <Button
+        android:id="@+id/btnPertemuan10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#6750A4"
+        android:padding="12dp"
+        android:text="Pertemuan 10 " />
+
+    <Button
+        android:id="@+id/btnPertemuan11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#6750A4"
+        android:padding="12dp"
+        android:text="Pertemuan 11" />
+
+    <Button
+        android:id="@+id/btnPertemuan11Tugas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#6750A4"
+        android:padding="12dp"
+        android:text="Pertemusn 11(tugas)" />
+</LinearLayout>
