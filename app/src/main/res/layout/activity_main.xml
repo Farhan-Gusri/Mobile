@@ -1,99 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/background_header"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:background="@drawable/bg_header_wave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Judul Header -->
-    <TextView
-        android:id="@+id/tvTitleHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Selamat Datang"
-        android:textColor="@android:color/white"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Pemrograman Mobile"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <!-- 1. Button Auth -->
-    <Button
-        android:id="@+id/btnToAuth"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="#FF9800"
-        android:padding="12dp"
-        android:text="Ke Halaman Auth / Login" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp">
 
-    <!-- 2. Button Pertemuan 6 -->
-    <Button
-        android:id="@+id/btnPertemuan6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="#6750A4"
-        android:padding="12dp"
-        android:text="Pertemuan 6" />
+        <!-- Judul Header -->
+        <TextView
+            android:id="@+id/tvTitleHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Selamat Datang"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-    <!-- 3. Button Pertemuan 9 -->
-    <Button
-        android:id="@+id/btnPertemuan9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:backgroundTint="#6750A4"
-        android:padding="12dp"
-        android:text="Pertemuan 9 (Widget &amp; Layout)" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Pemrograman Mobile"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <!-- 4. Button Pertemuan 10 (YANG BARU DITAMBAHKAN) -->
-    <Button
-        android:id="@+id/btnPertemuan10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#6750A4"
-        android:padding="12dp"
-        android:text="Pertemuan 10 " />
+        <!-- BARIS 1: Auth & Pertemuan 6 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
-    <Button
-        android:id="@+id/btnPertemuan11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#6750A4"
-        android:padding="12dp"
-        android:text="Pertemuan 11" />
+            <Button
+                android:id="@+id/btnToAuth"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="#FF9800"
+                android:text="Auth / Login"
+                android:textSize="13sp" />
 
-    <Button
-        android:id="@+id/btnPertemuan11Tugas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#6750A4"
-        android:padding="12dp"
-        android:text="Pertemusn 11(tugas)" />
-</LinearLayout>
+            <Button
+                android:id="@+id/btnPertemuan6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:backgroundTint="#6750A4"
+                android:text="Pertemuan 6"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnPertemuan4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="#673AB7"
+                android:text="Pertemuan 4"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnPertemuan5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:backgroundTint="#6750A4"
+                android:text="Pertemuan 5"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- BARIS 2: Pertemuan 9 & Pertemuan 10 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnPertemuan9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="#6750A4"
+                android:text="Pertemuan 9"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnPertemuan10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:backgroundTint="#6750A4"
+                android:text="Pertemuan 10"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- BARIS 3: Pertemuan 11 & Pertemuan 11 (Tugas) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnPertemuan11"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="#6750A4"
+                android:text="Pertemuan 11"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnPertemuan11Tugas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:backgroundTint="#6750A4"
+                android:text="Tugas 11"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Bagian Cat Fact API -->
+        <TextView
+            android:id="@+id/tvCatFact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Loading cat fact..."
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Refresh" />
+
+        <!-- Bagian Gallery Foto Picsum API -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
