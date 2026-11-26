@@ -7,6 +7,7 @@ import com.example.mars_farhan3tie.Home.HomeFragment
 import com.example.mars_farhan3tie.Message.MessageFragment
 import com.example.mars_farhan3tie.More.MoreFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.Note.NoteFragment
 
 class BaseActivity : AppCompatActivity() {
 
@@ -28,6 +29,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.message -> {
                     replaceFragment(MessageFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 R.id.more -> {

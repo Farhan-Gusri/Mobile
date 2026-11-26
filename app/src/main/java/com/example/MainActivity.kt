@@ -2,22 +2,29 @@ package com.example.mars_farhan3tie
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.Home.photo.PhotoAdapter
+import com.example.Note.NoteFragment
 import com.example.Pertemuan10.FragmentMore
 import com.example.Pertemuan11.TenthActivity
 import com.example.data.api.CatFactApiClient
 import com.example.data.api.PhotoApiClient
+import com.example.mars_farhan3tie.Message.MessageFragment
+import com.example.mars_farhan3tie.More.MoreFragment
 import com.example.mars_farhan3tie.pertemuan_9.NinthActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
 
@@ -93,6 +100,41 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, com.example.tugas11.OnBoardingActivity::class.java)
             startActivity(intent)
         }
+
+        // 5. Konfigurasi 4 Menu Bottom Navigation di Halaman Utama
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavView)
+        val fragmentContainer = findViewById<FrameLayout>(R.id.fragment_container)
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    fragmentContainer.visibility = View.GONE
+                    true
+                }
+                R.id.message -> {
+                    fragmentContainer.visibility = View.VISIBLE
+                    replaceFragment(MessageFragment())
+                    true
+                }
+                R.id.note -> {
+                    fragmentContainer.visibility = View.VISIBLE
+                    replaceFragment(NoteFragment())
+                    true
+                }
+                R.id.more -> {
+                    fragmentContainer.visibility = View.VISIBLE
+                    replaceFragment(MoreFragment())
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 
     private fun loadCatFact() {

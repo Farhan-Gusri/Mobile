@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.Pertemuan6.SixthActivity
-import com.example.mars_farhan3tie.AuthActivity
+import com.example.Pertemuan10.FragmentMore
 import com.example.mars_farhan3tie.R
+import com.example.mars_farhan3tie.pertemuan_9.NinthActivity
 
 class HomeFragment : Fragment() {
 
@@ -23,17 +23,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnToAuth = view.findViewById<Button>(R.id.btnToAuth)
-        val btnPertemuan6 = view.findViewById<Button>(R.id.btnPertemuan6)
+        val btnPertemuan9 = view.findViewById<Button>(R.id.btnPertemuan9)
+        val btnPertemuan10 = view.findViewById<Button>(R.id.btnPertemuan10)
 
-        btnToAuth.setOnClickListener {
-            val intent = Intent(requireContext(), AuthActivity::class.java)
+        btnPertemuan9?.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
 
-        btnPertemuan6.setOnClickListener {
-            val intent = Intent(requireContext(), SixthActivity::class.java)
-            startActivity(intent)
+        btnPertemuan10?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentMore())
+                .addToBackStack(null)
+                .commit()
         }
     }
 }
